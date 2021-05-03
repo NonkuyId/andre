@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Andre</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">Andre</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="404.html">Description</a></li>
+                    <li><a href="404.html">Berbayar</a></li>
+                    <li><a href="404.html">Info</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <style>
+    /* Addtional Style */
+.button{display:inline-flex;align-items:center;margin:15px 15px 15px 0;padding:10px 20px;outline:0;border:0;;border-radius:3px;font-size:18px;font-wight: bold;line-height:22px;}
+.button:hover{color:#fefefe;opacity:.75}
+a{text-decoration:none}
+        @font-face {font-family: 'Nunito Sans';font-style: normal;font-weight: 400;font-display: swap;src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cfe5.woff) format('woff'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8ccezI9tScg.woff2) format('woff2')}
+@font-face {font-family: 'Nunito Sans';font-style: normal;font-weight: 700;font-display: swap;src: local('Nunito Sans Bold'), local('NunitoSans-Bold'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8GBv5p.woff) format('woff'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8GBs5jU1EQVg.woff2) format('woff2')}
+@font-face {font-family: 'Nunito Sans';font-style: italic;font-weight: 400;font-display: swap;src: local('Nunito Sans Italic'), local('NunitoSans-Italic'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe0oMImSLYBIv1o4X1M8cce4I90.woff) format('woff'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe0oMImSLYBIv1o4X1M8cce4E9dKdmwp.woff2) format('woff2')}
+@font-face {font-family: 'Nunito Sans';font-style: italic;font-weight: 700;font-display: swap;src: local('Nunito Sans Bold Italic'), local('NunitoSans-BoldItalic'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe01MImSLYBIv1o4X1M8cce4G2JvU1c.woff) format('woff'), url(https://fonts.gstatic.com/s/nunitosans/v6/pe01MImSLYBIv1o4X1M8cce4G2JvY10IUql-.woff2) format('woff2')}
+        *{
+            margin: 0;
+            padding: 0;
+            ;box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            background: #eee;
+        }
+.wendyIconNotif{background:transparent;cursor:pointer;margin:auto;margin-top:50px;height:70px;width:70px;} /* untuk mengatur kiri kanan edit bagian padding-right:30px */
+.wendyIconNotif path{fill:#444} /* warna icon lonceng */
+.wendyIconNotif svg{width:70px;height:70px;vertical-align:middle} /* ukuran icon lonceng */
+
+wendyIconNotif:before{content:'';display:block;width:12px;height:12px;background-color:#f09800;border:2px solid #fefefe;border-radius:50%;position:absolute;top:165px;left:43%;webkit-animation:indicatornotif 1s ease infinite;-moz-animation:indicatornotif 1s ease infinite;animation:indicatornotif 1s ease infinite} /* lampu kedip warna #f09800 */
+
+@-webkit-keyframes indicatornotif{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+@-moz-keyframes indicatornotif{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+@keyframes indicatornotif{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.wendPopUp{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;padding:0;box-sizing:border-box;box-shadow:0 5px 12px rgba(0,0,0,0.2);border-radius:20px;font-family: Nunito Sans;z-index:999999999;display:none}
+.wendyContentPop{position:relative;width:600px;height:400px;background:#fff;border-radius:20px;display:flex;box-shadow:0 5px 15px rgba(0,0,0,0,1)}
+.wendyContentPop .wendyImgPop{position:relative;width:300px;height:400px;display:flex;justify-content:center;align-items:center}
+.wendyContentPop .wendyImgPop::before{content:'';position:absolute;width:250px;height:250px;background:#fff0c7;border-radius:50%}
+.wendyContentPop .wendyImgPop img{position:relative;max-width:250px;z-index:1}
+.wendyContentPop .contentWendy{position:relative;width:300px;height:400px;display:flex;justify-content:center;align-items:center}
+.wendyContentPop .content h3{color:#333;line-height:1em;font-weight:300;font-size:2em}
+.wendyContentPop .contentWendy h2{font-size:4em;color:#f09800;line-height:1em}
+.wendyContentPop .contentWendy h2 span{color:#333;font-size:0.75em;text-transform:uppercase}
+.wendyContentPop .contentWendy p{font-weight:300}
+.wendyContentPop .contentWendy a{display:inline-block;padding:10px 20px;background:#f09800;color:#fff;margin-top:15px;text-decoration:none;border-radius:10px}
+.wendyContentPop .contentWendy a:hover{opacity: 0.9}
+.wendyPopClose{position:absolute;top:20px;right:20px;width:40px;height:40px;background:#f3f3f3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z' fill='%23878787'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:25px;background-position:center;cursor:pointer;border-radius:50%;z-index:10}
+@media (max-width: 767px){
+.wendyContentPop{width:300px;height:auto;flex-direction:column}
+.wendyContentPop .wendyImgPop{height:200px;transform:translateY(-50px);top:55px}
+.wendyContentPop .wendyImgPop::before{background:#fff;height:300px;width:300px}
+.wendyContentPop .contentWendy{height:auto;text-align:center;padding:20px;padding-top:20px}
+.wendyPopClose{top:-0px;right:-10px;background:#f3f3f3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z' fill='%23444'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:25px;background-position:center;box-shadow:0 5px 12px rgba(0,0,0,0.2)}}
+/* css untuk darkmode silakan sesuaikan classnya jika berbeda atau bisa di hapus bagian ini */
+.dark-mode .wendPopUp h3,.dark-mode .wendPopUp p{color:#444}
+.dark-mode .wendyIconNotif:before{border:2px solid #444}
+.dark-mode .wendyIconNotif path{fill:#989b9f}
+</style>
+
+<html>
+<head>
+    <title>by wendy code</title>
+</head>
+<body><!--
+    <div class='wendPopUp'>
+<div class='wendyContentPop'>
+<div class='wendyPopClose'></div>
+<div class='wendyImgPop'>
+<img src='https://1.bp.blogspot.com/-CLMCiPOIlxo/YGwCirpp2CI/AAAAAAAAClQ/avYlr3DFJDU8Y6EUKR5BcKoGKCH9VhKOACNcBGAsYHQ/s320/20200721_153315.png'/>
+</div>
+
+<div class='contentWendy'>
+<div>
+<h3>Spesial Promo Ramadan</h3>
+<h2>50 <sup>%</sup>
+<span>off</span></h2>
+<p>Template toko online blogger dengan checkout via whatsapp dan email.</p>
+<a href='#' target='_blank'>dapatkan sekarang</a>
+</div>
+</div>
+</div>
+</div><!--notif-->
+
+  <div class='wendyIconNotif'>
+    <!-- bintik-->
+<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><g transform='translate(3.500000, 2.000000)'><path d='M10.1405897,17.5694629 C10.4180311,17.32187 10.8438152,17.306518 11.140035,17.5494941 C11.4658769,17.8167678 11.5115565,18.2954075 11.2420632,18.6185658 C10.5777028,19.4801758 9.54987935,19.989855 8.45625097,20 L8.45625097,20 L8.23912504,19.9908542 C7.23082501,19.9176829 6.2975965,19.4204774 5.67931074,18.6185658 L5.67931074,18.6185658 L5.61360047,18.5268524 C5.42043825,18.2101289 5.48511904,17.7924702 5.78133891,17.5494941 C6.10718078,17.2822203 6.58979525,17.3275237 6.85928854,17.6506819 C6.97764172,17.807587 7.11806508,17.9468539 7.27627317,18.0642323 C7.69914856,18.37647 8.23018908,18.5084076 8.75154604,18.4307656 C9.272903,18.3531235 9.74145234,18.0723239 10.0532134,17.6506819 L10.0532134,17.6506819 L10.0620854,17.6506819 Z M8.46512298,-4.79616347e-14 C11.5348397,-4.79616347e-14 14.9771809,2.16454026 15.3675495,5.64012319 L15.3675495,5.64012319 L15.3675495,7.45270568 C15.5008238,8.10690808 15.8070074,8.7142317 16.2547509,9.2124945 C16.2812788,9.24258861 16.3050326,9.27498109 16.325727,9.30928289 C16.7316898,9.92038415 16.9645715,10.62847 17,11.3594369 L17,11.3594369 L16.973384,11.5442147 C17.0039701,12.5445164 16.6701014,13.5222546 16.0329505,14.2982842 C15.2192877,15.1762511 14.1069384,15.724711 12.9100018,15.8380994 C9.96166621,16.1617418 6.98632378,16.1617418 4.03798823,15.8380994 C2.85854477,15.7169871 1.76556768,15.1687337 0.968271552,14.2982842 C0.32061592,13.5333882 -0.0232529078,12.5603384 0.00122207695,11.5618126 L0.00122207695,11.5618126 L0.00122207695,11.4386274 C0.0499997173,10.6857871 0.301205421,9.95964452 0.728727186,9.33567972 L0.728727186,9.33567972 L0.799703295,9.24769028 C1.24431614,8.74732875 1.550059,8.1408792 1.68690465,7.48790145 L1.68690465,7.48790145 L1.68690465,5.67531896 L1.73596444,5.57406421 C1.88512364,5.31699255 2.17563111,5.16663879 2.47988876,5.19955716 C2.82217862,5.23659034 3.09704701,5.4964 3.15078688,5.83369996 L3.15078688,5.83369996 L3.15078688,7.64628245 C3.15423731,7.6784545 3.15423731,7.71089878 3.15078688,7.74307083 C2.96605585,8.65082423 2.5438164,9.49441706 1.92644901,10.1891773 C1.68869608,10.5647756 1.55412081,10.9955098 1.53608042,11.4386274 L1.53608042,11.4386274 L1.53608042,11.6322041 C1.5163842,12.2554331 1.72432594,12.8647465 2.12163331,13.3479982 C2.67246619,13.9122665 3.40906548,14.2619232 4.19768448,14.33348 C7.05196634,14.641453 9.93151171,14.641453 12.7857936,14.33348 C13.5959515,14.2597331 14.3505573,13.893366 14.9062048,13.3040035 C15.2840021,12.832157 15.4819205,12.2432918 15.4651417,11.6410031 L15.4651417,11.6410031 L15.4651417,11.4386274 C15.4469401,10.9940255 15.3157095,10.5612015 15.0836451,10.1803784 C14.4405839,9.49350507 13.9935016,8.64922252 13.7883311,7.73427189 C13.7848807,7.70209983 13.7848807,7.66965556 13.7883311,7.6374835 L13.7883311,7.6374835 L13.7883311,5.81610207 C13.5310427,3.15882094 10.8605666,1.51341839 8.53609909,1.51341839 C7.54785763,1.51116468 6.57587086,1.76276992 5.71479879,2.24373075 L5.71479879,2.24373075 L5.60933557,2.2960794 C5.3925253,2.38362843 5.14447476,2.36825807 4.93831291,2.24943144 C4.69779074,2.11080037 4.55240903,1.8533283 4.55890889,1.57750418 C4.56540876,1.30168007 4.72275991,1.05122495 4.96954965,0.923889133 C6.03654057,0.326071387 7.23966405,0.00808271832 8.46512298,-4.79616347e-14 Z'/></g></svg>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+$(".wendyPopClose").click(function(){$(".wendPopUp").fadeOut("slow")}
+);$(".wendyIconNotif").click(function(){$(".wendPopUp").fadeIn("slow")});
+});
+</script>
+</body>
+</html>
+    <!-- Showcase -->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>Website Ku</h1>
+                <p>Website Yang Aku Sediakan Untuk Promot Akun Game Dan Top Up</p>
+                <a href="https://marketjb.github.io" class="btn btn-outline">OPEN</a>
+                
+            </div>
+            <div class="container flex">
+            <div class="card">
+                <a href="1. CODING/1. Reveal Website.html">
+                <!--<img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt=""><!--img-->
+                <center>
+                <h2>Belum Tersedia</h2>
+                </center>
+                <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700,900" rel="stylesheet">
+<!-- Display the countdown timer in an element -->
+<p id="demo" style="background-image: -moz-linear-gradient(top,#b8b0af 0%,black 100%);
+background-image: -webkit-linear-gradient(top,#b8b0af 0%,black  100%);
+background-image: -o-linear-gradient(top,#b8b0af 0%,black  100%);
+background-image: -ms-linear-gradient(top,#b8b0af 0%,black  100%);
+background-image: linear-gradient(top,#b8b0af 0%,black   100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+position:relative;font-size:1.2em;font-family: 'Yantramanav', sans-serif;font-weight:900;text-align: center;"></p>
+<script>
+    // Set the date we're counting down to
+var countDownDate = new Date("May 3, 2021 17:15:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "Hari " + hours + "Jam "
+  + minutes + "Menit " + seconds + "Detik ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center my-1">
+                Welcome to the paid coding website by Andre
+            </h3>
+
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="fab fa-html5 fa-3x"></i>
+                    <h3>20</h3>
+                    <p class="text-secondary">HTML</p>
+                </div>
+                <div>
+                    <i class="fab fa-css3-alt fa-3x"></i>
+                    <h3>0</h3>
+                    <p class="text-secondary">CSS</p>
+                </div>
+                <div>
+                    <i class="fab fa-js-square fa-3x"></i>
+                    <h3>0</h3>
+                    <p class="text-secondary">JS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cli -->
+    <section class="cli">
+        <div class="container grid">
+           
+            <div class="card">
+                <center>
+                <h3>Coding Berbayar</h3>
+                </center>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Cloud -->
+    <section class="cloud bg-primary my-2 py-2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">Penyimpanan</h2>
+                <p class="lead my-1">Website Yang Aku Sediakan Juga Menyimpan Berapa Orang Yang Membuka.</p>
+                <a href="404.html" class="btn btn-dark">Read More</a>
+            </div>
+            <img src="images/cloud.png" alt="">
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="languages">
+        <h2 class="md text-center my-2">
+            Coding Area
+        </h2>
+        <center>
+        <h4>Tap To Open Code</h4>
+        </center>
+        <div class="container flex"><!--
+            <div class="card">
+                <a href="1. CODING/1. Reveal Website.html">
+                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+                <h2>Reveal Website</h2>
+            </a>
+            </div>
+            <div class="card">
+                <a href="1. CODING/3. profil card.html">
+                <img src="https://i.ibb.co/T1wq2yJ/3-profil-card.png" alt="">
+                <h2>Profil Card</h2>
+            </a>
+            </div>
+              <div class="card">
+                <a href="1. CODING/1. Reveal Website.html">
+                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+                <h2>Reveal Website</h2>
+            </a>
+            </div>
+            <div class="card">
+                <a href="1. CODING/1. Reveal Website.html">
+                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+                <h2>Reveal Website</h2>
+            </a>
+            </div><!-- END -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Andre
+                </h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="404.html">Description</a></li>
+                    <li><a href="404.html">Berbayar</a></li>
+                    <li><a href="404.html">Info</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer> <style>
+.scroll-1{
+    background: url(background.jpg)no-repeat;
+    background-size: cover;
+}
+
+/*back to top CSS*/
+
+#backtotop{
+    z-index: 999;
+    display: inline-block;
+    position: fixed;
+    visibility: hidden;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    text-align: center;
+    opacity: .2;
+    border-radius: 10px;
+}
+
+#backtotop i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: inherit;
+    border-radius: 10px;
+}
+
+#backtotop.visible{
+    visibility: visible;
+    opacity: .5;
+    background: #24DB1E;
+}
+
+#backtotop:hover{
+    opacity: 1;
+    background: #24DB1E;
+}
+</style>
+
+<div class="scroll-1"></div>
+
+<a id="backtotop"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>
+
+<script>
+    jQuery("#backtotop").click(function(){
+    jQuery("body,html").animate({
+        scrollTop:0
+    },600);
+});
+
+jQuery(window).scroll(function(){
+    if(jQuery(window).scrollTop() > 150)
+    {
+        jQuery("#backtotop").addClass("visible");
+    }
+    else
+    {
+        jQuery("#backtotop").removeClass("visible");
+    }
+});
+</script>

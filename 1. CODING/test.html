@@ -1,119 +1,195 @@
-<style>
-	
-body{
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: #eee;
+  <style>
+    a.donasi-dong {
+    background: #E91E63;
+    margin-left: 5px;
+    margin-top: 25px;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    float: right;
+    color:#FFF;
+    font-weight: 500;
+}
+#infoPelajarjo {
+width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    position: fixed;
+    padding: 25px;
+    top: 15%;
+    transition: all .3s ease-in-out;
+    max-width: 450px;
+    left: 35%;
+    z-index: 99;
+    transform:translate(0,-300px);
+    border-radius: 5px;
+    box-shadow: 0 9px 46px 8px rgba(0,0,0,.14), 0 11px 15px -7px rgba(0,0,0,.12), 0 24px 38px 3px rgba(0,0,0,.2);
 }
 
-.card{
-  font-family: "Candara", sans-serif;
-  width: 340px;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
+#infoPelajarjo a {
+text-decoration:none;
+}
+a.pelajar-aktif {
+    color: #e91e63;
+    font-weight: 600;
+}
+#infoPelajarjo span {
+display: block;
+padding: 15px 15px;
+pointer-events: none;
+text-align: left;
+float: left;
+}
+#infoPelajarjo span h2 {
+font-size: 12px; /* Ukuran text */
+line-height: 21px;
+color: #222; */
+font-weight: normal;
+letter-spacing: 0px;
+  
 }
 
-.card-image img{
-  width: 100%;
-  height: 160px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  object-fit: cover;
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@media (prefers-reduced-motion) {
+  .animated {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
 }
 
-.profile-image img{
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  position: relative;
-  margin-top: -75px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100px;
-  border: 10px solid #fff;
-  transition-duration: 0.4s;
-  transition-property: transform;
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.profile-image img:hover{
-  transform: scale(1.1);
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.card-content h3{
-  font-size: 25px;
-  text-align: center;
-  margin: 0;
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
 
-.card-content p{
-  font-size: 16px;
-  text-align: justify;
-  padding: 0 20px 5px 20px;
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
 }
 
-.icons{
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 30px;
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
 }
 
-.icons a{
-  text-decoration: none;
-  font-size: 20px;
-  color: #0ABDE3;
-  padding: 0 14px;
-  transition-duration: 0.4s;
-  transition-property: transform;
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
 }
-
-.icons a:hover{
-  color: #000;
-  transform: scale(1.5);
+p.pesan-singkat {
+    overflow: hidden;
+    position: relative;
+    top: 11px;
+    font-family:roboto;
+}
+.infoPelajarwrap-pelajar h2{
+    position: absolute;
+    top: 9px;
+    margin: auto;
+    padding: 2px;
+    font-size: 18px;
+    font-family: roboto;
+    background: #fff;
+}
+@media screen and (max-width: 768px){
+div#infoPelajarjo {
+    left: 0;
+  }
+}
+.gelap {
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  opacity:0;
+  transition:.5s;
+  background:rgba(0,0,0,0.5);
+  z-index:-999;
+}
+.gelap.active{
+  opacity:1;
+  background:rgba(0,0,0,0.5);
+  z-index:98;
 }
 
 </style>
 
+<script type='text/javascript'>//<![CDATA[
+function loadCSS(e,t,o){"use strict";var s=window.document.createElement("link"),a=t||window.document.getElementsByTagName("script")[0];s.rel="stylesheet",s.href=e,s.media="only x",a.parentNode.insertBefore(s,a),setTimeout(function(){s.media=o||"all"})}loadCSS("https://fonts.googleapis.com/css?family=Roboto:400,400italic,700"),loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"),"undefined"==typeof jQuery&&document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"><\/script>');
+//]]></script>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Profile Card</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  </head>
-  <body>
+<div id='infoPelajarjo' class='animated'>
 
-    <!--Profile card start-->
-    <div class="card">
-      <div class="card-image">
-        <img src="1.png" alt="Your Image">
-      </div>
-      <div class="profile-image">
-        <img src="2.png" alt="Your Image">
-      </div>
-      <div class="card-content">
-        <h3>Your Name</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-      </div>
-      <div class="icons">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-youtube"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-whatsapp"></a>
-      </div>
-    </div>
-    <!--Profile card end-->
+<div class="infoPelajarwrap-pelajar">
+ <h2>Notifications</h2>
+ </div>
+<p class="pesan-singkat">Halo Kini Ada Yang Baru Loh Yuk Buruan Lihat <br>By : <a class="pelajar-aktif" href="https://marketjb.github.io/Andre/">Andre</a></p>
+ <a class="donasi-dong" href="#" title="Donasi Pengembang">Lihat</a>
+<a class="donasi-dong" href="#" title="Follow Instagram"><i class="fa fa-instagram"></i></a>
+</div>
 
-  </body>
-</html>
+ <div class="gelap"/>
+
+ <script>
+    document.getElementById('infoPelajarjo').classList.add('fadeInDown')
+document.getElementsByClassName('gelap')[0].classList.add('active')
+
+
+setTimeout(function(){
+ document.getElementById('infoPelajarjo').classList.add('fadeOutU')
+ document.getElementById('infoPelajarjo').classList.remove('fadeInDown')
+document.getElementsByClassName('gelap')[0].classList.remove('active')
+
+},1000)
+ </script>
