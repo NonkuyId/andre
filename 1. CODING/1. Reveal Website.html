@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Andre</title>
+</head>
+<body>
+
+<br>
+<center>
+  <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+              <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" height="auto" width="500px">
+            </div>
+
+  <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+                <p>DESCRIPTION<br><br>Efek Pengungkapan Elemen Situs Web Pada Gulir ke Bawah Mouse menggunakan HTML, CSS, dan Vanilla Javascript. Saat Anda menggulir ke bawah di halaman dengan efek gulir ini akan mengungkapkan elemen situs web satu per satu. Ini adalah efek pengguliran yang berguna saat Anda mendesain situs web yang menarik. Mari kita lihat cara membuat efek pengungkapan elemen ini.</p>
+            </div>
+</center>
+
+<style>
+  .code-header {
+    text-align:right;
+    background:#f8f8f8;
+    border:1px solid #e5e5e5;
+    font-family:Helvetica,Arial,sans-serif;box-sizing:border-box
+}
+
+  .code-header a {
+  font-size:15px;display:inline-block;
+  cursor:pointer;
+  border-left:1px solid #e5e5e5;
+  box-sizing:border-box;padding:6px 13px
+}
+
+.code-header a:hover {
+  background:#f3f3f3;
+  transition:all 0.1s linear
+}
+.msg-alert {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#333;
+  z-index:1000;
+  color:#fff;
+  font-family:Helvetica,Arial,sans-serif;font-size:15px;
+  padding:8px 12px;
+  border-radius:4px
+}
+code[class*="language-"],pre[class*="language-"] {
+  font-size:14px;
+  letter-spacing:.02rem;
+  line-height:1.4;
+  color:black;
+  background:none;
+  text-shadow:0 1px white;
+  font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;
+  word-break:normal;
+  word-wrap:normal;
+  -moz-tab-size:4;
+  -o-tab-size:4;
+  tab-size:4;
+  -webkit-hyphens:none;
+  -moz-hyphens:none;
+  -ms-hyphens:none;hyphens:none
+}
+pre[class*="language-"]::-moz-selection,pre[class*="language-"]::-moz-selection,code[class*="language-"]::-moz-selection,code[class*="language-"]::-moz-selection{text-shadow:none;background:#b3d4fc}
+
+pre[class*="language-"]::selection,pre[class*="language-"]::selection,code[class*="language-"]::selection,code[class*="language-"]::selection{text-shadow:none;background:#b3d4fc}
+
+@media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none}}
+pre[class*="language-"]{padding:1em;margin:0;overflow:auto;border:1px solid #e5e5e5;border-top:0;box-sizing:border-box}
+:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f8f8f8}
+:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em;white-space:normal}
+.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}
+.token.punctuation{color:#999}
+.namespace{opacity:.7}
+.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}
+.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}
+.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a}
+.token.atrule,.token.attr-value,.token.keyword{color:#07a}
+.token.function,.token.class-name{color:#DD4A68}
+.token.regex,.token.important,.token.variable{color:#e90}
+.token.important,.token.bold{font-weight:bold}
+.token.italic{font-style:italic}
+.token.entity{cursor:help}
+
+/* for demo */
+.container-1{width:80%;margin:0 auto}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+
+<div class="container-1">
+        <h2>HTML</h2>
+        <pre><code class="language-javascript">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title&gt;Reveal Website Elements On Scroll&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;section&gt;
+      &lt;h1&gt;Reveal Elements On Scroll &lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;div class="container reveal"&gt;
+        &lt;h2&gt;Your Title&lt;/h2&gt;
+        &lt;div class="cards"&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;div class="container reveal"&gt;
+        &lt;h2&gt;Your Title&lt;/h2&gt;
+        &lt;div class="cards"&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;div class="container reveal"&gt;
+        &lt;h2&gt;Your Title&lt;/h2&gt;
+        &lt;div class="cards"&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-card"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+          &lt;/div&gt;
+        <&lt;/div&gt;
+      <&lt;/div&gt;
+    <&lt;/section&gt;
+
+    &lt;script type="text/javascript"&gt;
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i &lt; reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop &lt; windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+    &lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Setelah Itu Tuliskan Code Berikut Pada CSS Kalian</h2><hr>
+        <h2>CSS</h2>
+        <pre><code class="language-css">
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #1D212B;
+}
+
+section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(1){
+  color: #fff;
+}
+
+section:nth-child(2){
+  color: #1D212B;
+  background: #fff;
+}
+
+section:nth-child(3){
+  color: #fff;
+}
+
+section:nth-child(4){
+  color: #1D212B;
+  background: #fff;
+}
+
+section .container{
+  margin: 100px;
+}
+
+section h1{
+  font-size: 60px;
+}
+
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section .cards{
+  display: flex;
+}
+
+section .cards .text-card{
+  background: #2696E9;
+  margin: 20px;
+  padding: 20px;
+}
+
+section .cards .text-card h3{
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px){
+  section h1{
+    font-size: 40px;
+  }
+
+  section .cards{
+    flex-direction: column;
+  }
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+</code></pre>
+<h2>Dan Yang Terakhir Adalah Code Javascript, Silahkan Kalian Tulis Code Berikut Pada Javascript Kalian.</h2><hr>
+        <h2>JAVASCRIPT</h2>
+        <pre><code class="language-html">
+          
+        </code></pre>
+    </div><br><br>
+<script>
+  function forEachElement(selector, fn) {
+  var elements = document.querySelectorAll(selector);
+  for (var i = 0; i < elements.length; i++)
+    fn(elements[i], i);
+}
+
+forEachElement("pre>code[class*='language-']", function(el, i) {
+  el.parentNode.insertAdjacentHTML("beforebegin", "<div class='code-header'><a class='copy-code'>Copy</a></div>");
+});
+
+forEachElement(".copy-code", function(el, i) {
+  el.addEventListener("click", function() {
+    var body = document.getElementsByTagName("body")[0];
+
+    var txt = document.createElement("textarea");
+    txt.setAttribute("id", "txt-cpy");
+    txt.style.position = "absolute";
+    txt.style.left = "-9999em";
+    txt.value = el.parentNode.nextElementSibling.textContent;
+    body.appendChild(txt);
+
+    document.getElementById("txt-cpy").select();
+
+    var div = document.createElement("div");
+    div.setAttribute("class", "msg-alert");
+    try {
+      var successful = document.execCommand('copy');
+      successful ? div.innerHTML = "Successfully copied to clipboard!" : div.innerHTML = "Fail to copy to clipboard !";
+      body.appendChild(div);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+
+    body.removeChild(txt);
+    setTimeout(function() {
+      body.removeChild(div);
+    }, 2000)
+  })
+});
+</script>
+
+<!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Andre
+                </h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Info</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
