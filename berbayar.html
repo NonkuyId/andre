@@ -1,31 +1,605 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+:root{
+    --red:#FF4F5B;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition:all .3s cubic-bezier(.16,.8,.62,1.52);
+    text-transform: capitalize;
+}
+
+*::selection{
+    background:var(--red);
+    color:#fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width:1.3rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #000;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--red);
+}
+
+body{
+    background:#f9f9f9;
+}
+
+section{
+    min-height: 100vh;
+    padding:0 7%;
+    padding-top: 9rem;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:1rem 4rem;
+    border-radius: 5rem;
+    background:var(--red);
+    color:#fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    font-size: 1.7rem;
+}
+
+.btn::before{
+    content:'';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background:#444;
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    transition:.3s linear;
+}
+
+.btn:hover::before{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.heading{
+    font-size: 3rem;
+    color:#666;
+}
+
+.heading span{
+    color:var(--red);
+}
+
+
+header{
+    width:100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top:0; left: 0;
+    z-index: 1000;
+    padding:2.5rem 7%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    font-size: 2.5rem;
+    color:#666;
+}
+
+header .logo span{
+    color:var(--red);
+}
+
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+header .navbar ul li{
+    margin-left: 2.5rem;
+}
+
+header .navbar ul li a{
+    color:#999;
+    font-size: 2rem;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color:var(--red);
+    border-bottom: .2rem solid var(--red);
+    padding:.7rem 0;
+}
+
+#menu{
+    font-size: 3rem;
+    color:#999;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home .image{
+    flex:1 1 40rem;
+}
+
+.home .image img{
+    width:100%;
+}
+
+.home .content{
+    flex:1 1 40rem;
+}
+
+.home .content span{
+    color:var(--red);
+    font-size: 2.5rem;
+}
+
+.home .content h3{
+    color:#666;
+    font-size: 5rem;
+}
+
+.home .content p{
+    color:#999;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.protect .heading{
+    text-align: center;
+    padding:1rem;
+}
+
+.protect .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.protect .box-container .box{
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    padding:2rem;
+    margin:2rem;
+    width:34rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.protect .box-container .box img{
+    height: 17rem;
+    width:auto;
+}
+
+.protect .box-container .box h3{
+    font-size: 2.5rem;
+    color:#666;
+    padding:1rem 0;
+}
+
+.protect .box-container .box p{
+    font-size: 1.4rem;
+    color:#999;
+    padding:.5rem;
+}
+
+.protect .box-container .box:hover{
+    transform:translateY(-1rem);
+}
+
+.symtoms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.symtoms .content{
+    flex:1 1 40rem;
+}
+
+.symtoms .image{
+    flex:1 1 40rem;
+}
+
+.symtoms .image img{
+    width:100%;
+}
+
+.symtoms .content p{
+    font-size: 1.5rem;
+    color:#999;
+    padding:1rem 0;
+}
+
+.symtoms .content ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding:1rem 0;
+}
+
+.symtoms .content ul .two{
+    padding-left: 4.5rem;
+}
+
+.symtoms .content ul li{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    color:#666;
+    padding: .5rem 0;
+}
+
+.prevent{
+    background:#222;
+}
+
+.prevent .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+}
+
+.prevent .row .image{
+    flex:1 1 37rem;
+    height:35rem;
+    text-align: center;
+}
+
+.prevent .row .image img{
+    height:80%;
+    width:90%;
+    object-fit: cover;
+}
+
+.prevent .row .content{
+    padding:2rem 0;
+    flex:1 1 37rem;
+}
+
+.prevent .row .content .heading{
+    color:#fff;
+}
+
+.prevent .row .content p{
+    font-size: 1.7rem;
+    color:#aaa;
+    padding:1rem 0;
+}
+
+.prevent .row .content ul li{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    color:#aaa;
+    padding:.5rem 0;
+}
+
+.handwash .heading{
+    text-align: center;
+    padding:1rem;
+}
+
+.handwash .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.handwash .box-container .box{
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    margin:2rem;
+    margin-top: 3rem;
+    padding:2rem 3.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.handwash .box-container .box img{
+    height:17rem;
+    width:auto;
+}
+
+.handwash .box-container .box h3{
+    font-size: 2rem;
+    color:#666;
+    padding:1rem 0;
+}
+
+.handwash .box-container .box span{
+    display: block;
+    position: absolute;
+    top:-2rem; left:-2rem;
+    height:5rem; width:5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    background:var(--red);
+    border-radius: 5rem;
+}
+
+.spread .heading{
+    text-align: center;
+    padding:1rem;
+}
+
+.spread .image{
+    height: 80vh;
+    width:100%;
+    background:url(../images/map.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer{
+    min-height: 200px;
+    padding-top: 0;
+    background:#333;
+}
+
+.footer .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+    margin:1rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:#fff;
+    padding-bottom: 2rem;
+    font-weight: normal;
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    color:#ccc;
+    padding:1rem 0;
+}
+
+.footer .box-container .box p i{
+    padding-right: 1rem;
+    color:var(--red);
+}
+
+.footer .box-container .box a{
+    font-size: 1.5rem;
+    color:#ccc;
+    padding:1rem 0;
+    display: block;
+}
+
+.footer .box-container .box a:hover{
+    color:var(--red);
+}
+
+.footer .box-container .box .share{
+    display: flex;
+    flex-wrap: wrap;
+    padding:1rem 0;
+}
+
+.footer .box-container .box .share a{
+    height:4rem;
+    width:4rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 5rem;
+    border:.1rem solid #fff3;
+    margin-right: 1rem;
+}
+
+.footer .box-container .box .share a:hover{
+    background:#fff;
+}
+
+.footer .credit{
+    padding:2rem 1rem;
+    text-align: center;
+    color:#fff;
+    font-weight: normal;
+    font-size: 2rem;
+    border-top: .1rem solid #fff3;
+}
+
+.footer .credit a{
+    color:var(--red);
+}
+
+.scroll-top{
+    position: fixed;
+    bottom:2rem; right:1rem;
+    z-index: 100;
+    display: none;
+}
+
+.scroll-top img{
+    height: 7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu{
+        display: block;
+    }
+
+    header .navbar{
+        position: fixed;
+        top:8rem; left:-120%;
+        height: 100%;
+        width:100%;
+        background:#eee;
+        border-top: .2rem solid rgba(0,0,0,.1);
+    }
+
+    header .navbar ul{
+        flex-flow: column;
+        padding:2rem;
+    }
+
+    header .navbar ul li{
+        text-align: center;
+        width:100%;
+        margin:1rem 0;
+    }
+
+    header .navbar ul li a{
+        display: block;
+        padding:1rem;
+    }
+
+    header .navbar ul li a.active,
+    header .navbar ul li a:hover{
+        padding:1rem;
+        background:var(--red);
+        color:#fff;
+        border:none;
+        border-radius: 5rem;
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    header .navbar.nav-toggle{
+        left:0;
+    }
+
+    .home .content{
+        text-align: center;
+    }
+
+    .prevent .row:last-child{
+        flex-flow: column-reverse;
+    }
+
+}
+
+@media (max-width:500px){
+
+    html{
+        font-size: 50%;
+    }
+
+    section{
+        padding:0 3%;
+        padding-top: 9rem;
+    }
+
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>Andre</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+
+
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="container flex">
-            <h1 class="logo">Andre</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="404.html">Description</a></li>
-                    <li><a href="berbayar.html">Berbayar</a></li>
-                    <li><a href="404.html">Info</a></li>
-                </ul>
-            </nav>
-        </div>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo">A</span>ndre <i class="fas fa-file-code"></i></a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#protect">Coding</a></li>
+            <li><a href="#symtoms">Info</a></li>
+            <li><a href="#prevent">Teratas</a></li>
+            <li><a href="#handwash">Segera Hadir</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+<br>
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+
+        <span>Market JB</span>
+        <h3>Website Promot Akun Dan Top Up</h3>
+        <p>Menyediakan Promot Akun Dan Top Up Game Dengan Aman Dan Terpercaya</p>
+        <a href="https://marketjb.github.io" class="btn">Lihat</a>
+
     </div>
+
     <style>
     /* Addtional Style */
 .button{display:inline-flex;align-items:center;margin:15px 15px 15px 0;padding:10px 20px;outline:0;border:0;;border-radius:3px;font-size:18px;font-wight: bold;line-height:22px;}
@@ -48,7 +622,7 @@ a{text-decoration:none}
 .wendyIconNotif path{fill:#444} /* warna icon lonceng */
 .wendyIconNotif svg{width:70px;height:70px;vertical-align:middle} /* ukuran icon lonceng */
 
-.wendyIconNotif:before{content:'';display:block;width:12px;height:12px;background-color:#f09800;border:2px solid #fefefe;border-radius:50%;position:absolute;top:167px;left:43%;webkit-animation:indicatornotif 1s ease infinite;-moz-animation:indicatornotif 1s ease infinite;animation:indicatornotif 1s ease infinite} /* lampu kedip warna #f09800 */
+.wendyIconNotif:before{content:'';display:block;width:12px;height:12px;background-color:#f09800;border:2px solid #fefefe;border-radius:50%;position:absolute;top:0px;left:430%;webkit-animation:indicatornotif 1s ease infinite;-moz-animation:indicatornotif 1s ease infinite;animation:indicatornotif 1s ease infinite} /* lampu kedip warna #f09800 */
 
 @-webkit-keyframes indicatornotif{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 @-moz-keyframes indicatornotif{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
@@ -66,21 +640,24 @@ a{text-decoration:none}
 .wendyContentPop .contentWendy a{display:inline-block;padding:10px 20px;background:#f09800;color:#fff;margin-top:15px;text-decoration:none;border-radius:10px}
 .wendyContentPop .contentWendy a:hover{opacity: 0.9}
 .wendyPopClose{position:absolute;top:20px;right:20px;width:40px;height:40px;background:#f3f3f3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z' fill='%23878787'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:25px;background-position:center;cursor:pointer;border-radius:50%;z-index:10}
-@media (max-width: 767px){
+
+@media (max-width: 600px){
 .wendyContentPop{width:300px;height:auto;flex-direction:column}
 .wendyContentPop .wendyImgPop{height:200px;transform:translateY(-50px);top:55px}
 .wendyContentPop .wendyImgPop::before{background:#fff;height:300px;width:300px}
 .wendyContentPop .contentWendy{height:auto;text-align:center;padding:20px;padding-top:20px}
 .wendyPopClose{top:-0px;right:-10px;background:#f3f3f3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z' fill='%23444'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:25px;background-position:center;box-shadow:0 5px 12px rgba(0,0,0,0.2)}}
+.wendyIconNotif:before{content:'';display:block;width:12px;height:12px;background-color:#f09800;border:2px solid #fefefe;border-radius:50%;position:absolute;top:476px;left:43%;webkit-animation:indicatornotif 1s ease infinite;-moz-animation:indicatornotif 1s ease infinite;animation:indicatornotif 1s ease infinite} /* lampu kedip warna #f09800 */
 /* css untuk darkmode silakan sesuaikan classnya jika berbeda atau bisa di hapus bagian ini */
 .dark-mode .wendPopUp h3,.dark-mode .wendPopUp p{color:#444}
 .dark-mode .wendyIconNotif:before{border:2px solid #444}
 .dark-mode .wendyIconNotif path{fill:#989b9f}
+
 </style>
 
 <html>
 <head>
-    <title>by wendy code</title>
+
 </head>
 <body>
     <div class='wendPopUp'>
@@ -117,177 +694,284 @@ $(".wendyPopClose").click(function(){$(".wendPopUp").fadeOut("slow")}
 </script>
 </body>
 </html>
-    <!-- Showcase -->
-    <section class="showcase">
-        <div class="container grid">
-            <div class="showcase-text">
-                <h1>Website Ku</h1>
-                <p>Website Yang Aku Sediakan Untuk Promot Akun Game Dan Top Up</p>
-                <a href="https://marketjb.github.io" class="btn btn-outline">OPEN</a>
-                
+
+</section>
+
+
+<!-- home section ends -->
+
+<section class="protect" id="protect">
+
+    <h1 class="heading">Coding <span>Berbayar</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+            <h3>Reveal Website</h3>
+            <p>Efek Pengungkapan Elemen Situs Web Pada Gulir ke Bawah Mouse menggunakan HTML, CSS, dan Vanilla Javascript.</p>
+            <center>
+            <a href="1. CODING/1. Reveal Website.html" class="btn">Lihat</a>
+            </center>
+        </div>
+
+        <div class="box">
+            <img src="https://i.ibb.co/T1wq2yJ/3-profil-card.png" alt="">
+            <h3>Profil Card</h3>
+            <p>desain kartu profil yang menarik hanya dengan menggunakan HTML dan CSS. Desain kartu profil ini sederhana untuk dirancang.</p>
+            <center>
+            <a href="1. CODING/3. profil card.html" class="btn">Lihat</a>
+            </center>
+        </div>
+<!--
+        <div class="box">
+            <img src="images/protect-3.png" alt="">
+            <h3>Avoid Close Contact</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ab magni consequatur, quae in repellat. Placeat deserunt vitae alias dignissimos!</p>
+            <center>
+            <a href="#" class="btn">Lihat</a>
+            </center>
+        </div>
+<!--test-->
+    </div>
+
+</section>
+
+<!-- symtoms section starts  -->
+
+<section class="symtoms" id="symtoms">
+
+    <div class="content">
+        <h1 class="heading">Info Coding <span>Andre</span></h1>
+        <p>Informasi Tentang Website Coding Andre.</p>
+        <ul>
+            <div class="one">
+                <li>Coding</li>
+                <li>Update</li>
+                <li>Terbaru</li>
             </div>
-            <div class="container flex">
-            <div class="card">
-                <a href="1. CODING/1. Reveal Website.html">
-                <!--<img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt=""><!--img-->
-                <center>
-                <h2>Belum Tersedia</h2>
-                </center>
-                <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700,900" rel="stylesheet">
-<!-- Display the countdown timer in an element -->
-<p id="demo" style="background-image: -moz-linear-gradient(top,#b8b0af 0%,black 100%);
-background-image: -webkit-linear-gradient(top,#b8b0af 0%,black  100%);
-background-image: -o-linear-gradient(top,#b8b0af 0%,black  100%);
-background-image: -ms-linear-gradient(top,#b8b0af 0%,black  100%);
-background-image: linear-gradient(top,#b8b0af 0%,black   100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-position:relative;font-size:1.2em;font-family: 'Yantramanav', sans-serif;font-weight:900;text-align: center;"></p>
+            <div class="two">
+                <li>Segera Hadir</li>            
+                <li>Akan Datang</li>
+                <li>Berbayar</li>
+            </div>
+        </ul>
+        <a href="1. CODING/info.html" class="btn">Lihat</a>
+    </div>
+
+
+<!--
+    <div class="image">
+        <img src="images/symptoms-img.png" alt="">
+    </div>
+<!--img-->
+</section>
+
+<!-- symtoms section ends -->
+
+<!-- prevent section starts 
+
+<section class="prevent" id="prevent">
+
+    <div class="row">
+
+        <div class="image">
+            <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+        </div>
+
+        <div class="content">
+            <h1 class="heading">things <span>not to do</span> during covid</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat nulla, dolor excepturi repellendus officiis expedita saepe veniam minima adipisci tenetur?</p>
+            <ul>
+                <li>Do Not Share Eating</li>
+                <li>Do Not Touch Your Face or Nose</li>
+                <li>Do Not Contact Sick People</li>
+            </ul>
+        </div>
+
+    </div>
+<!--
+    <div class="row">
+
+        <div class="content">
+            <h1 class="heading">things <span>to do</span> during covid</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat nulla, dolor excepturi repellendus officiis expedita saepe veniam minima adipisci tenetur?</p>
+            <ul>
+                <li>Wash Your Hands For 20 sec</li>
+                <li>Wear a Mask if Available</li>
+                <li>Seek Medical Care Regularly</li>
+            </ul>
+        </div>
+
+        <div class="image">
+            <img src="images/do-img.png" alt="">
+        </div>
+<!-- 2 -->
+    </div>
+
+</section>
+
+<!-- prevent section ends -->
+
+<!-- handwash section starts
+
+<section class="handwash" id="handwash">
+
+    <h1 class="heading">Segera <span> </span> Hadir</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <span>1</span>
+            <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
+            <h3>Apply Soap on Hand</h3>
+        </div>
+
+        <div class="box">
+            <span>2</span>
+            <img src="images/hadnwash-2.png" alt="">
+            <h3>Palm to Palm</h3>
+        </div>
+
+        <div class="box">
+            <span>3</span>
+            <img src="images/hadnwash-3.png" alt="">
+            <h3>Between Fingers</h3>
+        </div>
+
+        <div class="box">
+            <span>4</span>
+            <img src="images/hadnwash-4.png" alt="">
+            <h3>Back of The Hands</h3>
+        </div>
+
+        <div class="box">
+            <span>5</span>
+            <img src="images/hadnwash-5.png" alt="">
+            <h3>clean with water</h3>
+        </div>
+
+        <div class="box">
+            <span>6</span>
+            <img src="images/hadnwash-6.png" alt="">
+            <h3>Use Towel to Dry</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- handwash section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+
+        <div class="box">
+            <h3>contact info</h3>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <a href="#"> Andre </a> all rights reserved! </h1>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- scroll top  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
+
 <script>
-    // Set the date we're counting down to
-var countDownDate = new Date("May 3, 2021 17:15:00").getTime();
+    $(document).ready(function(){
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+    $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
 
-  // Get todays date and time
-  var now = new Date().getTime();
+    $(window).on('scroll load',function(){
 
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
+      $('#menu').removeClass('fa-times');
+      $('.navbar').removeClass('nav-toggle');
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if($(window).scrollTop() > 0){
+        $('.scroll-top').show();
+      }else{
+        $('.scroll-top').hide();
+      }
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "Hari " + hours + "Jam "
-  + minutes + "Menit " + seconds + "Detik ";
+      // scroll spy 
 
-  // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+      
+    $('section').each(function(){
+
+      let height = $(this).height();
+      let offset = $(this).offset().top - 200;
+      let id = $(this).attr('id');
+      let top = $(window).scrollTop();
+
+      if(top > offset && top < offset + height){
+        $('.navbar ul li a').removeClass('active')
+        $('.navbar').find(`[href="#${id}"]`).addClass('active');
+      }
+
+    });
+
+    });
+
+    // smooth scrolling
+
+    $('a[href*="#"]').on('click',function(e){
+
+      e.preventDefault();
+
+      $('html, body').animate({
+
+        scrollTop : $($(this).attr('href')).offset().top,
+
+      },
+      500,
+      'linear'
+      )
+
+    })
+
+});
 </script>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-
-    <section class="stats">
-        <div class="container">
-            <h3 class="stats-heading text-center my-1">
-                Welcome to the paid coding website by Andre
-            </h3>
-
-            <div class="grid grid-3 text-center my-4">
-                <div>
-                    <i class="fab fa-html5 fa-3x"></i>
-                    <h3>0</h3>
-                    <p class="text-secondary">HTML</p>
-                </div>
-                <div>
-                    <i class="fab fa-css3-alt fa-3x"></i>
-                    <h3>0</h3>
-                    <p class="text-secondary">CSS</p>
-                </div>
-                <div>
-                    <i class="fab fa-js-square fa-3x"></i>
-                    <h3>0</h3>
-                    <p class="text-secondary">JS</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cli -->
-    <section class="cli">
-        <div class="container grid">
-           
-            <div class="card">
-                <center>
-                <h3>Coding Berbayar</h3>
-                </center>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Cloud -->
-    <section class="cloud bg-primary my-2 py-2">
-        <div class="container grid">
-            <div class="text-center">
-                <h2 class="lg">Penyimpanan</h2>
-                <p class="lead my-1">Website Yang Aku Sediakan Juga Menyimpan Berapa Orang Yang Membuka.</p>
-                <a href="404.html" class="btn btn-dark">Read More</a>
-            </div>
-            <img src="images/cloud.png" alt="">
-        </div>
-    </section>
-
-    <!-- Languages -->
-    <section class="languages">
-        <h2 class="md text-center my-2">
-            Coding Area
-        </h2>
-        <center>
-        <h4>Tap To Open Code</h4>
-        </center>
-        <div class="container flex"><!--
-            <div class="card">
-                <a href="1. CODING/1. Reveal Website.html">
-                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
-                <h2>Reveal Website</h2>
-            </a>
-            </div>
-            <div class="card">
-                <a href="1. CODING/3. profil card.html">
-                <img src="https://i.ibb.co/T1wq2yJ/3-profil-card.png" alt="">
-                <h2>Profil Card</h2>
-            </a>
-            </div>
-              <div class="card">
-                <a href="1. CODING/1. Reveal Website.html">
-                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
-                <h2>Reveal Website</h2>
-            </a>
-            </div>
-            <div class="card">
-                <a href="1. CODING/1. Reveal Website.html">
-                <img src="https://i.ibb.co/2MFKdg5/1-Reveal-Website.png" alt="">
-                <h2>Reveal Website</h2>
-            </a>
-            </div><!-- END -->
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer bg-dark py-5">
-        <div class="container grid grid-3">
-            <div>
-                <h1>Andre
-                </h1>
-                <p>Copyright &copy; 2021</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="404.html">Description</a></li>
-                    <li><a href="berbayar.html">Berbayar</a></li>
-                    <li><a href="404.html">Info</a></li>
-                </ul>
-            </nav>
-            <div class="social">
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-            </div>
-        </div>
-    </footer> <style>
+<style>
 .scroll-1{
     background: url(background.jpg)no-repeat;
     background-size: cover;
