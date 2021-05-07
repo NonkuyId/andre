@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Andre</title>
 </head>
 <body>
@@ -226,6 +226,168 @@ body{
           
         </code></pre>
     </div><br><br>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+.market-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.market-btn{
+  position: relative;
+  background: #4285F4;
+  color: #fff;
+  width: 230px;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  transition: background 0.3s ease;
+}
+
+.market-btn:hover{
+  background: #2874F3;
+}
+
+.market-btn i{
+  margin-left: 5px;
+}
+
+.countdown-market{
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.countdown-market span{
+  color: #0693F6;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.pleaseWait-text-market{
+  font-size: 1.1em;
+  font-weight: 600;
+  display: none;
+}
+
+.manualDownload-text-market{
+  font-size: 1.1em;
+  font-weight: 600;
+  display: none;
+}
+
+.manualDownload-link-market{
+  color: #0693F6;
+  font-weight: 800;
+  text-decoration: none;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section id="download">
+    <a class="red-bg brd-rd4" title="Register">
+    <div class="market-container">
+      <a  class="market-btn">Download File <i class="fas fa-download"></i></a>
+      <div class="countdown-market"></div>
+      <div class="pleaseWait-text-market">Download File...</div>
+      <div class="manualDownload-text-market">
+        Jika Tidak Otomatis Terdownload, <a href="#" class="manualDownload-link-market">Tekan Disini.</a>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    const downloadBtn = document.querySelector(".market-btn");
+    const countdown = document.querySelector(".countdown-market");
+    const pleaseWaitText = document.querySelector(".pleaseWait-text-market");
+    const manualDownloadText = document.querySelector(".manualDownload-text-market");
+    const manualDownloadLink = document.querySelector(".manualDownload-link-market");
+    var timeLeft = 5;
+
+    downloadBtn.addEventListener("click", () => {
+      downloadBtn.style.display = "none";
+      countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds."; //for quick start of countdown
+
+      var downloadTimer = setInterval(function timeCount(){
+        timeLeft -= 1;
+        countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds.";
+
+        if(timeLeft <= 0){
+          clearInterval(downloadTimer);
+          pleaseWaitText.style.display = "block";
+          let download_href = "https://drive.google.com/uc?export=download&id=152xdRmRYsAnHOtvNRWyOexbQuzFfpzHb";
+ sumber: https://www.posciety.com/download-file-secara-paksa-dari-link-google-drive/1va2-rjze6eNsA0q4dzSlsiP9GokP906c/view?usp=sharing"; //enter the downloadable file link URL here
+          window.location.href = download_href;
+          manualDownloadLink.href = download_href;
+
+          setTimeout(() => {
+            pleaseWaitText.style.display = "none";
+            manualDownloadText.style.display = "block";
+          }, 1000);
+        }
+      }, 1000);
+    });
+    </script>
+
+  </section>
+<script>
+  function forEachElement(selector, fn) {
+  var elements = document.querySelectorAll(selector);
+  for (var i = 0; i < elements.length; i++)
+    fn(elements[i], i);
+}
+
+forEachElement("pre>code[class*='language-']", function(el, i) {
+  el.parentNode.insertAdjacentHTML("beforebegin", "<div class='code-header'><a class='copy-code'>Copy</a></div>");
+});
+
+forEachElement(".copy-code", function(el, i) {
+  el.addEventListener("click", function() {
+    var body = document.getElementsByTagName("body")[0];
+
+    var txt = document.createElement("textarea");
+    txt.setAttribute("id", "txt-cpy");
+    txt.style.position = "absolute";
+    txt.style.left = "-9999em";
+    txt.value = el.parentNode.nextElementSibling.textContent;
+    body.appendChild(txt);
+
+    document.getElementById("txt-cpy").select();
+
+    var div = document.createElement("div");
+    div.setAttribute("class", "msg-alert");
+    try {
+      var successful = document.execCommand('copy');
+      successful ? div.innerHTML = "Successfully copied to clipboard!" : div.innerHTML = "Fail to copy to clipboard !";
+      body.appendChild(div);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+
+    body.removeChild(txt);
+    setTimeout(function() {
+      body.removeChild(div);
+    }, 2000)
+  })
+});
+</script>
+
 <script>
   function forEachElement(selector, fn) {
   var elements = document.querySelectorAll(selector);
