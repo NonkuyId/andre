@@ -140,7 +140,7 @@ pre[class*="language-"]{padding:1em;margin:0;overflow:auto;border:1px solid #e5e
 <h2>Setelah Itu Tuliskan Code Berikut Pada CSS Kalian</h2><hr>
         <h2>CSS</h2>
         <pre><code class="language-css">
-body{
+         body{
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -227,7 +227,7 @@ body{
         </code></pre>
     </div><br><br>
 
-<style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
@@ -308,7 +308,7 @@ body{
       <div class="countdown-market"></div>
       <div class="pleaseWait-text-market">Download File...</div>
       <div class="manualDownload-text-market">
-        Jika Tidak Otomatis Terdownload, <a href="#" class="manualDownload-link-market">Tekan Disini.</a>
+        Jika Tidak Otomatis Terdownload, <a href="" class="manualDownload-link-market">Tekan Disini.</a>
       </div>
     </div>
 
@@ -331,7 +331,7 @@ body{
         if(timeLeft <= 0){
           clearInterval(downloadTimer);
           pleaseWaitText.style.display = "block";
-          let download_href = "https://drive.google.com/uc?export=download&id=152xdRmRYsAnHOtvNRWyOexbQuzFfpzHb";
+          let download_href = "https://www.mediafire.com/file/izr9yx4rp0737ky/1.+reveal+website.html/file";
  sumber: https://www.posciety.com/download-file-secara-paksa-dari-link-google-drive/1va2-rjze6eNsA0q4dzSlsiP9GokP906c/view?usp=sharing"; //enter the downloadable file link URL here
           window.location.href = download_href;
           manualDownloadLink.href = download_href;
@@ -346,48 +346,6 @@ body{
     </script>
 
   </section>
-<script>
-  function forEachElement(selector, fn) {
-  var elements = document.querySelectorAll(selector);
-  for (var i = 0; i < elements.length; i++)
-    fn(elements[i], i);
-}
-
-forEachElement("pre>code[class*='language-']", function(el, i) {
-  el.parentNode.insertAdjacentHTML("beforebegin", "<div class='code-header'><a class='copy-code'>Copy</a></div>");
-});
-
-forEachElement(".copy-code", function(el, i) {
-  el.addEventListener("click", function() {
-    var body = document.getElementsByTagName("body")[0];
-
-    var txt = document.createElement("textarea");
-    txt.setAttribute("id", "txt-cpy");
-    txt.style.position = "absolute";
-    txt.style.left = "-9999em";
-    txt.value = el.parentNode.nextElementSibling.textContent;
-    body.appendChild(txt);
-
-    document.getElementById("txt-cpy").select();
-
-    var div = document.createElement("div");
-    div.setAttribute("class", "msg-alert");
-    try {
-      var successful = document.execCommand('copy');
-      successful ? div.innerHTML = "Successfully copied to clipboard!" : div.innerHTML = "Fail to copy to clipboard !";
-      body.appendChild(div);
-    } catch (err) {
-      console.log('Oops, unable to copy');
-    }
-
-    body.removeChild(txt);
-    setTimeout(function() {
-      body.removeChild(div);
-    }, 2000)
-  })
-});
-</script>
-
 <script>
   function forEachElement(selector, fn) {
   var elements = document.querySelectorAll(selector);

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Andre</title>
+</head>
+<body>
+
+<br>
+<center>
+  <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+              <img src="https://i.ibb.co/x7MNS5P/segera-hadir-1.png" height="auto" width="300px">
+            </div>
+
+  <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+                <p>DESCRIPTION<br><br>Note Diguanakan untuk menyimpan atau bisa sebagai pengingat. tanpa download aplikasi </p>
+            </div>
+</center>
+
+<style>
+  .code-header {
+    text-align:right;
+    background:#f8f8f8;
+    border:1px solid #e5e5e5;
+    font-family:Helvetica,Arial,sans-serif;box-sizing:border-box
+}
+
+  .code-header a {
+  font-size:15px;display:inline-block;
+  cursor:pointer;
+  border-left:1px solid #e5e5e5;
+  box-sizing:border-box;padding:6px 13px
+}
+
+.code-header a:hover {
+  background:#f3f3f3;
+  transition:all 0.1s linear
+}
+.msg-alert {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#333;
+  z-index:1000;
+  color:#fff;
+  font-family:Helvetica,Arial,sans-serif;font-size:15px;
+  padding:8px 12px;
+  border-radius:4px
+}
+code[class*="language-"],pre[class*="language-"] {
+  font-size:14px;
+  letter-spacing:.02rem;
+  line-height:1.4;
+  color:black;
+  background:none;
+  text-shadow:0 1px white;
+  font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;
+  word-break:normal;
+  word-wrap:normal;
+  -moz-tab-size:4;
+  -o-tab-size:4;
+  tab-size:4;
+  -webkit-hyphens:none;
+  -moz-hyphens:none;
+  -ms-hyphens:none;hyphens:none
+}
+pre[class*="language-"]::-moz-selection,pre[class*="language-"]::-moz-selection,code[class*="language-"]::-moz-selection,code[class*="language-"]::-moz-selection{text-shadow:none;background:#b3d4fc}
+
+pre[class*="language-"]::selection,pre[class*="language-"]::selection,code[class*="language-"]::selection,code[class*="language-"]::selection{text-shadow:none;background:#b3d4fc}
+
+@media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none}}
+pre[class*="language-"]{padding:1em;margin:0;overflow:auto;border:1px solid #e5e5e5;border-top:0;box-sizing:border-box}
+:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f8f8f8}
+:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em;white-space:normal}
+.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}
+.token.punctuation{color:#999}
+.namespace{opacity:.7}
+.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}
+.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}
+.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a}
+.token.atrule,.token.attr-value,.token.keyword{color:#07a}
+.token.function,.token.class-name{color:#DD4A68}
+.token.regex,.token.important,.token.variable{color:#e90}
+.token.important,.token.bold{font-weight:bold}
+.token.italic{font-style:italic}
+.token.entity{cursor:help}
+
+/* for demo */
+.container-1{width:80%;margin:0 auto}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+
+<div class="container-1">
+        <h2>HTML</h2>
+        <pre><code class="language-javascript">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Note | By Andre&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css"&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Lato|Short+Stack" rel="stylesheet"&gt;
+  &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;script src="main.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+  &lt;header id="header"&gt;
+    &lt;nav id="navbar"&gt;
+      &lt;ul&gt;
+        &lt;li id="how-it-works-btn"&gt;Cara Menggunakan&lt;/li&gt;
+        &lt;li id="deleteAll"&gt;Hapus Semua&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;div id="how-it-works"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Bagaimana perekat disimpan:&lt;/strong&gt; perekat disimpan ke penyimpanan lokal browser. Anda dapat menutup tab, atau browser dan perekatnya akan diingat. Menghapus riwayat browser juga akan menghapusnya.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Membuat note :&lt;/strong&gt; click on the &lt;span class="fas fa-plus"&gt;&lt;/span&lt; tombol untuk membuatnote baru.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Type in sticky :&lt;/strong&gt; when you type inside a sticky, the &lt;span class="fas fa-check"&gt;&lt;/span&gt; icon will be red. When the icon is red the information is not yet saved.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Save sticky text :&lt;/strong&gt; click anywhere outside the sticky's text area to save sticky. When text is saved, the &lt;span class="fas fa-check"&gt;&lt;/span&gt; icon turns black.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Change sticky color :&lt;/strong&gt; click on the &lt;span class="fas fa-paint-brush"&gt;&lt;/span&gt; icon to change sticky color. Colors are saved automatically if there is text in a sticky.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong>Stickies from storage :&lt;/strong&gt; items not showing the &lt;span class="fas fa-check"&gt;&lt;/span&gt; are retrieved from storage. They can be changed/deleted as per normal rules&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong>Delete sticky :&lt;/strong&gt; click on the &lt;span class="fas fa-trash-alt"&gt;&lt;/span&gt; icon to delete sticky.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Delete all stickies :&lt;/strong&gt; DELETE ALL button deletes all stickies from your browser's memory/local storage.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Caution :&lt;/strong&gt; Both DELETE ALL and &lt;span class="fas fa-trash-alt"&gt;&lt;/span&gt; actions are permanent and cannot be undone&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;main id="main"&gt;
+    &lt;div class="sticky"&gt;
+      &lt;div class="sticky-header"&gt;
+        &lt;span class="sticky-header-menu add-button fas fa-plus" title='new sticky'&gt;&lt;/span&gt;
+        &lt;span class="sticky-header-menu notSaved fas fa-check" title='not saved'&gt;&lt;/span&gt;
+        &lt;span class="sticky-header-menu drop-button fas fa-paint-brush" title='change color'&gt;&lt;/span&gt;
+        &lt;div class="dropdown-content-hide"&gt;
+          &lt;div class="pink-color"&gt;&lt;/div&gt;
+          &lt;div class="yellow-color"&gt;&lt;/div&gt;
+          &lt;div class="green-color"&gt;&lt;/div&gt;
+          &lt;div class="blue-color"&gt;&lt;/div&gt;
+          &lt;div class="purple-color"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="sticky-header-menu remove-button fas fa-trash-alt" title='delete sticky'&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;textarea class="sticky-content"&gt;
+        &lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div id="createStickyBtn"&gt;+&lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2>Setelah Itu Tuliskan Code Berikut Pada CSS Kalian</h2><hr>
+        <h2>CSS</h2>
+        <pre><code class="language-css">
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+#header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#header,
+#navbar,
+#navbar ul {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background: rgb(249, 239, 175);
+  height: 50px;
+  width: 100%;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+#navbar li {
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+#navbar li:hover {
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  background: white;
+}
+
+#how-it-works {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
+
+#how-it-works ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  line-height: 2;
+  box-sizing: border-box;
+  background-color: rgb(241, 241, 241);
+}
+
+#how-it-works li:not(:first-child) {
+  margin-top: 15px;
+}
+
+#how-it-works strong {
+  text-transform: uppercase;
+}
+
+#how-it-works p {
+  margin: 0;
+}
+
+#how-it-works .fas {
+  width: 25px;
+  text-align: center;
+}
+
+.sticky {
+  font: 20px "Short Stack", "Gloria Hallelujah", cursive;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 3px;
+  background: linear-gradient(rgb(249, 239, 175), rgb(247, 233, 141));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  min-height: 250px;
+  margin: 30px;
+  transition: 0.3s;
+  float: left;
+  display: none;
+  vertical-align: top;
+}
+
+.sticky:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sticky-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sticky-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sticky-content::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.sticky-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sticky:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.sticky:nth-child(odd) {
+  transform: rotate(-1.5deg);
+}
+
+.sticky-header {
+  height: 30px;
+  width: inherit;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sticky-header-menu {
+  font-weight: bold;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: block;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.sticky-header-menu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sticky-content {
+  padding: 10px 10px 0 10px;
+  overflow-y: auto;
+  width: 270px;
+  min-height: 250px;
+  box-sizing: border-box;
+  border: 0;
+  resize: vertical;
+  background-color: transparent;
+  display: block;
+  cursor: default;
+}
+
+.sticky-content:focus {
+  outline: none;
+}
+
+#createStickyBtn {
+  float: left;
+  display: none;
+  padding: 25px 25px 40px;
+  margin: 30px;
+  width: 270px;
+  height: 270px;
+  user-select: none;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  border: 15px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.1);
+  font: 220px "Helvetica", sans-serif;
+  line-height: 185px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+#createStickyBtn:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content-hide {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  width: 270px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.dropdown-content-show {
+  top: 30px;
+  left: 0;
+}
+
+.dropdown-content-hide div {
+  padding: 14px 14px;
+  flex: 1;
+}
+
+.pink-color {
+  background: linear-gradient(rgb(250, 214, 231), rgb(236, 185, 209));
+}
+
+.blue-color {
+  background: linear-gradient(rgb(175, 249, 238), rgb(150, 226, 214));
+}
+
+.green-color {
+  background: linear-gradient(rgb(178, 249, 175), rgb(152, 228, 149));
+}
+
+.yellow-color {
+  background: linear-gradient(rgb(249, 239, 175), rgb(247, 233, 141));
+}
+
+.purple-color {
+  background: linear-gradient(rgb(218, 215, 250), rgb(197, 194, 232));
+}
+
+.drop-button {
+  margin-left: auto;
+}
+
+.notSaved {
+  display: none;
+}
+
+.notSaved:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+
+@media (max-width: 1024px) {
+  .sticky {
+    line-height: 1.2;
+    width: 200px;
+    min-height: 180px;
+    margin: 20px;
+  }
+
+  .sticky-content {
+    width: 200px;
+    min-height: 170px;
+    font-size: 16px;
+  }
+
+  .dropdown-content-hide {
+    width: 200px;
+  }
+
+  #createStickyBtn {
+    margin: 20px;
+    width: 200px;
+    height: 180px;
+
+    padding: 0;
+    line-height: 150px;
+  }
+
+  #header,
+  #how-it-works {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  .sticky {
+    line-height: 1.2;
+    width: 130px;
+    min-height: 145px;
+    margin: 15px;
+  }
+
+  .sticky-content {
+    width: 130px;
+    min-height: 115px;
+    font-size: 14px;
+  }
+
+  .dropdown-content-hide {
+    width: 130px;
+  }
+
+  .dropdown-content-hide div {
+    padding: 10px 10px;
+  }
+
+  #createStickyBtn {
+    margin: 15px;
+    width: 140px;
+    height: 140px;
+    padding: 0;
+    font: 90px "Helvetica", sans-serif;
+  }
+
+  #header,
+  #how-it-works {
+    font-size: 12px;
+  }
+  #how-it-works {
+    top: 30px;
+  }
+  .sticky-header-menu {
+    padding: 0 10px 0 0;
+    width: 25px;
+    margin: 0 3px;
+  }
+
+  .drop-button {
+    margin-left: auto;
+  }
+
+  .sticky-header {
+    justify-content: space-around;
+  }
+
+  #header,
+  #navbar,
+  #navbar ul {
+    height: 30px;
+  }
+}
+</code></pre>
+<h2>Dan Yang Terakhir Adalah Code Javascript, Silahkan Kalian Tulis Code Berikut Pada Javascript Kalian.</h2><hr>
+        <h2>JAVASCRIPT</h2>
+        <pre><code class="language-html">
+          window.onload = function() {
+  loadStartEvents();
+
+  function loadStartEvents() {
+    const howItWorksBtn = document.querySelector("#how-it-works-btn");
+    const deleteAllBtn = document.querySelector("#deleteAll");
+    const createFirstSticky = document.querySelector("#createStickyBtn"); //for first empty existing sticky only
+
+    document.onmouseup = hideDropMenu; //hides color menus when clicked anywhere in the page
+    howItWorksBtn.onclick = toggleHowItWorks; //toggles how it works menu
+    deleteAllBtn.onclick = deleteAllStickies; //deletes all stickies from dom and storage
+    createFirstSticky.onclick = createId; //creates the first sticky, and hides the initial add button
+
+    let isStorageEmpty = getStoredStickies(createFirstSticky); //retrieves data from local storage, and recreates stored stikies
+  }
+
+  function hideDropMenu(e) {
+    //hides color menus when clicked anywhere in the page
+    let stickies = Array.from(document.querySelectorAll(".sticky"));
+    let stickiesIdArray = stickies.map(el => el.id).filter(el => el); //get array of all sticky ids, if they exist
+
+    for (let i = 0; i < stickiesIdArray.length; i++) {
+      let dropContent = document.querySelector(
+        `#${stickiesIdArray[i]} .dropdown-content-hide`
+      );
+      let dropButton = document.querySelector(
+        `#${stickiesIdArray[i]} .drop-button`
+      );
+      if (dropContent != e.target.parentNode && dropButton != e.target) {
+        dropContent.style.display = "none";
+      }
+    }
+  }
+
+  function toggleHowItWorks() {
+    //toggles how it works menu
+    let howItWorksDiv = document.querySelector("#how-it-works");
+    howItWorksDiv.style.display != "block"
+      ? (howItWorksDiv.style.display = "block")
+      : (howItWorksDiv.style.display = "none");
+  }
+
+  function deleteAllStickies() {
+    //deletes all stickies from dom and storage
+    localStorage.clear(); //clear all from storage
+    let parent = document.querySelector("#main");
+    while (parent.children.length > 2) {
+      //while parent still has 2 children(sticky template+initial create button)
+      parent.removeChild(parent.lastChild); //remove all children from the end
+    }
+    document.querySelector("#createStickyBtn").style.display = "block"; //and show initial create button
+  }
+
+  function getStoredStickies(createFirstSticky) {
+    //retrieves data from local storage, and recreates stored stikies
+    let stickiesArray = getStickiesArray(); //get the stickiesArray from storage, which contains all the keys used by the program
+
+    if (stickiesArray.length > 0) {
+      //if there were items in storage, hide the inital create button
+      createFirstSticky.style.display = "none";
+    } else {
+      createFirstSticky.style.display = "block";
+    }
+
+    for (let i = 0; i < stickiesArray.length; i++) {
+      //using the keys stored in the array, get all the stored sticky objects
+      let key = stickiesArray[i];
+      let stickyObject = JSON.parse(localStorage[key]);
+      addStoredStickiesToDom(stickyObject, key); //call func that handles the creation of elements for the stored objects
+    }
+  }
+
+  function getStickiesArray() {
+    "use strict";
+    let stickiesArray = localStorage.getItem("stickiesArray");
+
+    if (!stickiesArray) {
+      //if no item in storage yet, returns null
+      stickiesArray = []; //so i create an new empty array
+      localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray)); //and I store a new key stickiesArray that has as value a JSON string array copy of stickiesArray
+    } else {
+      stickiesArray = JSON.parse(stickiesArray); //else we found an array of keys, and we parse it to get an actual array
+    }
+    return stickiesArray; //which we return to the calling stack
+  }
+
+  function addStoredStickiesToDom(stickyObject, key) {
+    // handles the creation of elements for the stored objects
+    let stickyClone = setIdToStoredObjects(key); //asks for dom sticky to be created and sets their key as id
+    Array.from(stickyClone.children).filter(
+      el => el.className == "sticky-content"
+    )[0].value =
+      stickyObject.value; //adds stored value to new element
+    stickyClone.style.backgroundImage = stickyObject.color; //adds stored color to new element
+  }
+
+  function setIdToStoredObjects(key) {
+    //asks for dom sticky to be created and sets their key as id
+    let stickyClone = createSticky(); //create actual dom sticky
+    if (key) {
+      stickyClone.setAttribute("id", key); //for all the already stored items, set ID=stored key. else no id new sticky is created
+    }
+    return stickyClone; //returns created element to calling stack
+  }
+
+  function createSticky() {
+    let parent = document.querySelector("#main");
+    let sticky = document.querySelector(".sticky");
+    let stickyClone = sticky.cloneNode(true); //creates a clone from sticky div template
+    parent.appendChild(stickyClone);
+    stickyClone.style.display = "block";
+
+    let newAddBtn = Array.from(
+      Array.from(stickyClone.children).filter(
+        el => el.className == "sticky-header"
+      )[0].children
+    ).filter(el => el.classList.contains("add-button"))[0];
+    newAddBtn.onclick = createId; //adds createID handler to new dom sticky
+
+    let removeBtn = Array.from(
+      Array.from(stickyClone.children).filter(
+        el => el.className == "sticky-header"
+      )[0].children
+    ).filter(el => el.classList.contains("remove-button"))[0];
+    removeBtn.onclick = deleteSticky; //adds delete sticky handler to new dom sticky
+
+    let dropBtn = Array.from(
+      Array.from(stickyClone.children).filter(
+        el => el.className == "sticky-header"
+      )[0].children
+    ).filter(el => el.classList.contains("drop-button"))[0];
+    dropBtn.onclick = toggleDropMenuClick; //adds color dropdown toggle handler to new dom sticky
+
+    let dropMenus = Array.from(
+      document.querySelectorAll(".dropdown-content-hide")
+    );
+    for (let dropMenu of dropMenus) {
+      dropMenu.onclick = changeColor; //adds changeColor handler to color dropdown menu
+    }
+
+    let stickyCloneContent = Array.from(stickyClone.children).filter(
+      el => el.className == "sticky-content"
+    )[0];
+    stickyCloneContent.value = ""; //new clone has no text on creation
+
+    stickyCloneContent.onchange = storeSticky; //when sticky text is changed, save content to storage
+    stickyCloneContent.oninput = notSavedNotification; //when new text is being writtern, show not saved notification
+
+    return stickyClone;
+  }
+
+  function createId(e) {
+    //creates unique IDs for dom sticky
+    if (e.target.id == "createStickyBtn") {
+      //if triggered by first button, then hide that button
+      e.target.style.display = "none";
+    }
+
+    let currentDate = new Date();
+    let key = "sticky_" + currentDate.getTime();
+
+    let stickyClone = createSticky();
+    stickyClone.setAttribute("id", key);
+  }
+
+  function deleteSticky(e) {
+    const createFirstSticky = document.querySelector("#createStickyBtn");
+    const main = document.querySelector("#main");
+    let key = e.target.parentNode.parentNode.id; //using sticky id as key for storage removal
+
+    localStorage.removeItem(key); //remove key from storage
+
+    let stickiesArray = getStickiesArray(); //remove key from stikie array
+    if (stickiesArray) {
+      for (let i = 0; i < stickiesArray.length; i++) {
+        if (key == stickiesArray[i]) {
+          stickiesArray.splice(i, 1);
+        }
+      }
+      localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray));
+    }
+
+    removeStickyFromDOM(key); //remove sticky from dom
+
+    if (stickiesArray.length > 0 || main.children.length > 2) {
+      //show createFirst button
+      createFirstSticky.style.display = "none";
+    } else {
+      createFirstSticky.style.display = "block";
+    }
+  }
+
+  function removeStickyFromDOM(key) {
+    var sticky = document.getElementById(key);
+    sticky.parentNode.removeChild(sticky);
+  }
+
+  function toggleDropMenuClick(e) {
+    //toggle color menu on click
+    let parentId = e.target.parentNode.parentNode.id;
+    let stickyContent = document.querySelector(`#${parentId} .sticky-content`);
+    let dropMenu = document.querySelector(
+      `#${parentId} .dropdown-content-hide`
+    );
+    dropMenu.style.display != "flex"
+      ? (dropMenu.style.display = "flex")
+      : (dropMenu.style.display = "none");
+  }
+
+  function changeColor(e) {
+    let colorBtn = e.target;
+    let sticky = e.target.parentNode.parentNode.parentNode;
+    let key = sticky.id;
+    let newColor = getComputedStyle(colorBtn).backgroundImage;
+    let stickyObject = JSON.parse(localStorage.getItem(key));
+
+    sticky.style.backgroundImage = newColor;
+    if (stickyObject) {
+      stickyObject.color = newColor;
+      localStorage.setItem(key, JSON.stringify(stickyObject));
+    }
+  }
+
+  function storeSticky(e) {
+    let stickiesArray = getStickiesArray(); //get array of keys from storage, and add new keys to it
+    let sticky = e.target.parentNode;
+
+    let key = sticky.id; //for all items, set as key their ID
+    let stickyContent = e.target.value;
+
+    let oldColor = getComputedStyle(sticky).backgroundImage;
+    let stickyObject = {
+      value: stickyContent,
+      color: oldColor
+    };
+
+    localStorage.setItem(key, JSON.stringify(stickyObject)); //store textarea value+color in localstorage
+
+    if (!stickiesArray.includes(key)) {
+      stickiesArray.push(key); //and save this key/id to the stickie array, if it doesn't already exist
+      localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray)); //store the new array key items int he stickiesarray
+    }
+
+    let notSaved = document.querySelector(`#${key} .notSaved`);
+    notSaved.style.display = "inline-block";
+    notSaved.style.color = "black";
+    notSaved.title = "saved";
+  }
+
+  function notSavedNotification(e) {
+    let stickyId = e.target.parentNode.id;
+    let notSaved = document.querySelector(`#${stickyId} .notSaved`);
+    notSaved.style.display = "inline-block";
+    notSaved.style.color = "red";
+    notSaved.title = "not saved";
+  }
+};
+        </code></pre>
+    </div><br><br>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+.market-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.market-btn{
+  position: relative;
+  background: #4285F4;
+  color: #fff;
+  width: 230px;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  transition: background 0.3s ease;
+}
+
+.market-btn:hover{
+  background: #2874F3;
+}
+
+.market-btn i{
+  margin-left: 5px;
+}
+
+.countdown-market{
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.countdown-market span{
+  color: #0693F6;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.pleaseWait-text-market{
+  font-size: 1.1em;
+  font-weight: 600;
+  display: none;
+}
+
+.manualDownload-text-market{
+  font-size: 1.1em;
+  font-weight: 600;
+  display: none;
+}
+
+.manualDownload-link-market{
+  color: #0693F6;
+  font-weight: 800;
+  text-decoration: none;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section id="download">
+    <a class="red-bg brd-rd4" title="Register">
+    <div class="market-container">
+      <a  class="market-btn">Download File <i class="fas fa-download"></i></a>
+      <div class="countdown-market"></div>
+      <div class="pleaseWait-text-market">Download File...</div>
+      <div class="manualDownload-text-market">
+        Jika Tidak Otomatis Terdownload, <a href="" class="manualDownload-link-market">Tekan Disini.</a>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    const downloadBtn = document.querySelector(".market-btn");
+    const countdown = document.querySelector(".countdown-market");
+    const pleaseWaitText = document.querySelector(".pleaseWait-text-market");
+    const manualDownloadText = document.querySelector(".manualDownload-text-market");
+    const manualDownloadLink = document.querySelector(".manualDownload-link-market");
+    var timeLeft = 5;
+
+    downloadBtn.addEventListener("click", () => {
+      downloadBtn.style.display = "none";
+      countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds."; //for quick start of countdown
+
+      var downloadTimer = setInterval(function timeCount(){
+        timeLeft -= 1;
+        countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds.";
+
+        if(timeLeft <= 0){
+          clearInterval(downloadTimer);
+          pleaseWaitText.style.display = "block";
+          let download_href = "https://www.mediafire.com/file/izr9yx4rp0737ky/1.+reveal+website.html/file";
+ sumber: https://www.posciety.com/download-file-secara-paksa-dari-link-google-drive/1va2-rjze6eNsA0q4dzSlsiP9GokP906c/view?usp=sharing"; //enter the downloadable file link URL here
+          window.location.href = download_href;
+          manualDownloadLink.href = download_href;
+
+          setTimeout(() => {
+            pleaseWaitText.style.display = "none";
+            manualDownloadText.style.display = "block";
+          }, 1000);
+        }
+      }, 1000);
+    });
+    </script>
+
+  </section>
+<script>
+  function forEachElement(selector, fn) {
+  var elements = document.querySelectorAll(selector);
+  for (var i = 0; i < elements.length; i++)
+    fn(elements[i], i);
+}
+
+forEachElement("pre>code[class*='language-']", function(el, i) {
+  el.parentNode.insertAdjacentHTML("beforebegin", "<div class='code-header'><a class='copy-code'>Copy</a></div>");
+});
+
+forEachElement(".copy-code", function(el, i) {
+  el.addEventListener("click", function() {
+    var body = document.getElementsByTagName("body")[0];
+
+    var txt = document.createElement("textarea");
+    txt.setAttribute("id", "txt-cpy");
+    txt.style.position = "absolute";
+    txt.style.left = "-9999em";
+    txt.value = el.parentNode.nextElementSibling.textContent;
+    body.appendChild(txt);
+
+    document.getElementById("txt-cpy").select();
+
+    var div = document.createElement("div");
+    div.setAttribute("class", "msg-alert");
+    try {
+      var successful = document.execCommand('copy');
+      successful ? div.innerHTML = "Successfully copied to clipboard!" : div.innerHTML = "Fail to copy to clipboard !";
+      body.appendChild(div);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+
+    body.removeChild(txt);
+    setTimeout(function() {
+      body.removeChild(div);
+    }, 2000)
+  })
+});
+</script>
+
+<!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Andre
+                </h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Info</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
